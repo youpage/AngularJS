@@ -13,4 +13,9 @@
 - 3 inputs each with maximum char. length 5. When entering the 5th char. in an input the cursor jumps to the next input right after the char. has been inserted. When deleting the 1st char. of an input the cursor jumps at the end of previous input right after that char. has been deleted.
 - controllers are loaded only when the route changes
 - used ui-router for routes
-- randomlly generate a 50 items array with 4 properties. The list can be sorted and filtered by an input field  
+- randomlly generate a 50 items array with 4 properties. The list can be sorted and filtered by an input field 
+
+## Install and Run
+- clone or download the repository
+- install globally [http-server](https://www.npmjs.com/package/http-server)
+- run http-server from cmd in the repository folder
