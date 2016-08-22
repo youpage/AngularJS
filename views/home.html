@@ -1,0 +1,58 @@
+<div class="view">
+    <div class="container">
+        <header>
+            <h2><span class="glyphicon glyphicon-info-sign"></span>Enter user details</h2>
+        </header>
+        <br />
+        <form name="visitorForm">
+            <div class="form-group">
+                <label for="firstname">First Name: {{user.firstName}}</label>
+                <input id="firstname" type="text" ng-model="user.firstName" class="form-control" required pattern="\w{3,}">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name: {{user.lastName}}</label>
+                <input id="lastname" type="text" ng-model="user.lastName" class="form-control" required pattern="\w{3,}">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone: {{user.phone}}</label>
+                <input format-phone id="phone" type="text" ng-model="user.phone" class="form-control" required pattern="\(\d{3}\)\s\d{3}-\d{4}">
+            </div>
+            <div class="form-inline">
+                <label for="serial">Serial Number:</label>
+                <div class="from-group" ng-keyup="updateSerial()">
+                    <input name="serial" type="text" class="form-control ng-valid" maxlength="5">
+                    <input name="serial" type="text" class="form-control ng-valid" maxlength="5">
+                    <input name="serial" type="text" class="form-control ng-valid" maxlength="5">
+                </div>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default glyphicon glyphicon-log-in" ng-click="sendData()">&nbsp;Register</button>
+            </div>
+        </form>
+
+        <hr>
+        <p>Test Phone Directive - no validation pattern to see live ngModel binding</p>
+        <div class="form-group">
+            <label for="phoneNr">Phone: {{phoneNr}}</label>
+            <input format-phone id="phoneNr" type="text" ng-model="phoneNr" class="form-control">
+        </div>
+
+        <hr>
+        <p>Test Currency Directive</p>
+        <div class="form-group">
+            <label for="Price">Price: {{price}}</label>
+            <input format-currency id="price" type="text" ng-model="price" class="form-control">
+        </div>
+
+        <hr>
+        <p>Test Sum up {{total}}. {{msg}}</p>
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="number" ng-model="a" class="form-control" ng-keyup="updateSum()">
+                <input type="number" ng-model="b" class="form-control" ng-keyup="updateSum()">
+                <input type="number" ng-model="c" class="form-control" ng-keyup="updateSum()">
+                <input type="number" ng-model="total" class="form-control" ng-keyup="updateValues()" title="Press ENTER to update the values!">
+            </div>
+        </form>
+    </div>
+</div>

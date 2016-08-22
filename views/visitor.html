@@ -1,0 +1,40 @@
+<p ng-if="receivedUserName">Last entered name is: {{receivedUserName}}</p>
+<div class="table-responsive">
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="display: inline-block; width: 100%;">
+            <span>List of visitors</span>
+            <div class="pull-right">
+                <input placeholder="Filter by any... " class="form-control " ng-model="filterVisitors " autocomplete="off " type="text " style="width:300px; color: #444 " focus>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body ">
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th ng-repeat="c in columns ">
+                        <a ng-if="c.sortable" href ng-click="sort(c)">{{c.text}}
+                            <span ng-show="sortType == c.predicate && sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+                            <span ng-show="sortType == c.predicate && !sortReverse" class="glyphicon glyphicon-triangle-top"></span>
+                        </a>
+                        <span ng-if="!c.sortable">{{c.text}}</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="v in visitors | filter:filterVisitors | orderBy:sortType:sortReverse " id="{{v.id}} ">
+                    <td>{{v.id}}</td>
+                    <td>{{v.firstName}}</td>
+                    <td>{{v.lastName}}</td>
+                    <td>{{v.phone}}</td>
+                    <td style="width: 55px; ">
+                        <div class="btn-group ">
+                            <button type="button " class="btn btn-default glyphicon glyphicon-eye-open " ng-click="show(); " ng-disabled="!v.serial "></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

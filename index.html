@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="no-js" lang="enUS">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>AngularJS Demo</title>
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="title" content="AngularJS Demo">
+    <meta name="copyright" content="youpage.ro">
+    <meta name="google-site-verification" content="<add key>">
+    <meta name="owner" content="youpage.ro">
+    <meta name="publisher" content="youpage.ro ">
+    <meta name="rating" content="General">
+    <meta name="expires" content="never">
+    <meta name="distribution" content="Global">
+    <meta name="robots" content="index,FOLLOW">
+    <meta name="revisit-after" content="1 days">
+    <meta name="author" content="Claudiu Garbacea">
+    <link rel="icon" href="favicon.ico">
+
+    <script src="https://code.angularjs.org/1.5.8/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-animate.js"></script>
+
+</head>
+<!--[if lt IE 10]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+<body>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="home">AngularJS</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="visitor">Visitors</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div ui-view></div>
+    </div>
+
+    </script>
+    <!-- Load custom scripts via RequireJS -->
+    <script src="http://requirejs.org/docs/release/2.2.0/minified/require.js" data-main="main"></script>
+</body>
+
+</html>
